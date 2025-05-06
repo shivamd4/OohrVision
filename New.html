@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOHR Vision - AI-Powered School Safety</title>
+    <link rel="icon" type="image/x-icon" href="images/logo.svg">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007bff">
+
+    <!-- bootstrap css cdn link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- bootstrap icon cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+
+    <!-- for adding animation to website we have use AOS library 
+    AOS Library css file cdn link -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- jquery cdn link  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    
+  <!-- navbar starts -->
+  <nav
+  id="navbar-top"
+  class="navbar navbar-expand-lg navbar-light bg-white sticky-top"
+>
+<div class="container-fluid d-flex justify-content-between align-items-center px-4">
+  <a class="navbar-brand d-flex align-items-center gap-3" href="#" style="color: #3f396d">
+    <img src="images/logo.svg" alt="OOHR Vision Logo" height="60" />
+    <span class="fw-bold fs-2">OOHR VISION</span>
+  </a>
+  
+
+    <button
+      class="nav-menu d-md-none ms-auto"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <i class="bi bi-menu-button-fill fs-3"></i>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-center"
+      id="navbarNav"
+    >
+      <ul class="navbar-nav gap-4" style="font-size: 1.2rem">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="New.html">See What's Inside</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Register</a>
+        </li>
+
+        <li class="nav-item d-md-none text-center mt-3">
+          <a href="login.html" class="c-btn h-btn px-4 py-2 rounded-pill text-white text-decoration-none">Login</a>
+        </li>
+      </ul>
+    </div>
+    <!-- <button class="c-btn ms-4 py-2 px-4 rounded-pill d-none d-md-inline-block text-white text-decoration-none"><a href="contact.html">Login</a></button> -->
+    <a href="login.html" id="af" class="c-btn ms-4 py-2 px-4 rounded-pill d-none d-md-inline-block text-white text-decoration-none">Login</a>
+  </div>
+</nav>
+<!-- navbar ends here -->
+
+    <!-- blog section starts -->
+    <!-- Blog Section -->
+<section class="py-5 px-2 px-md-3">
+  <div class="container">
+    <!-- Headings -->
+    <div class="text-center mb-5">
+      <small class="text-uppercase text-muted">See What's Inside</small>
+      <h2 class="fw-bold mt-1 ad">How OOHR Vision Enhances School Travel Safety</h2>
+      <h5 class="text-secondary mt-2">We are redefining school transportation with cutting-edge AI</h5>
+    </div>
+
+    <!-- 1st Post: Image Left, Text Right -->
+    <div class="blogpost mb-5">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img src="images/a1.jpg"  class="img-fluid rounded-4" alt="2048 Game Image" />
+        </div>
+        <div class="col-md-6 mt-3 mt-md-0">
+          <!-- <small>By Pawan Kumavat</small><span class="ms-3">Mar 8, 2022</span> -->
+          <h4><a href="">🔐 AI Facial Recognition</a></h4><br>
+          <a href="" class="read-more-btn link" data-bs-toggle="modal" data-bs-target="#exampleModal1">Safety Starts with Identity</a><br><br>
+          <p class="text-muted" style="text-align: justify;">Our advanced facial recognition system ensures that only authorized students board the school vehicle. Each child is identified in real-time, preventing unauthorized access and eliminating chances of mix-ups. This added layer of security gives parents and schools complete peace of mind.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2nd Post: Image Right, Text Left -->
+    <div class="blogpost mb-5">
+      <div class="row align-items-center flex-md-row-reverse">
+        <div class="col-md-6">
+          <img src="images/a2.jpg" class="img-fluid rounded-4" alt="Currency Converter Image" />
+        </div>
+        <div class="col-md-6 mt-3 mt-md-0">
+          <!-- <small>By Pawan Kumavat</small><span class="ms-3">Mar 8, 2022</span> -->
+          <h4><a href="">😴 Driver Drowsiness Detection</a></h4><br>
+          <a href="" class="read-more-btn link" data-bs-toggle="modal" data-bs-target="#exampleModal2">Keeping Drivers Alert, Kids Safe</a><br><br>
+          <p class="text-muted" style="text-align: justify;">Oohr Vision uses cutting-edge AI to monitor driver behavior and detect signs of fatigue or drowsiness. If any signs are detected, instant alerts are triggered to avoid potential accidents. This proactive measure ensures our young passengers are always in safe hands.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3rd Post: Image Left, Text Right -->
+    <div class="blogpost mb-5">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img src="images/a3.jpg" class="img-fluid rounded-4" alt="Dictionary App Image" />
+        </div>
+        <div class="col-md-6 mt-3 mt-md-0">
+          <!-- <small>By Pawan Kumavat</small><span class="ms-3">Mar 8, 2022</span> -->
+          <h4><a href="">🚌 Vehicle Condition Monitoring</a></h4><br>
+          <a href="#" class="read-more-btn link" data-bs-toggle="modal" data-bs-target="#exampleModal3">Clean. Comfortable. Compliant.</a><br><br>
+          <p class="text-muted" style="text-align: justify;">Our technology continuously monitors the health and hygiene of the vehicle. From cleanliness checks to air-conditioning status and mechanical performance, we make sure that children travel in a safe, clean, and well-maintained environment every single day.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4th Post: Image Right, Text Left -->
+    <div class="blogpost mb-5">
+      <div class="row align-items-center flex-md-row-reverse">
+        <div class="col-md-6">
+          <img src="images/a4.jpg" class="img-fluid rounded-4" alt="Currency Converter Image" />
+        </div>
+        <div class="col-md-6 mt-3 mt-md-0">
+          <!-- <small>By Pawan Kumavat</small><span class="ms-3">Mar 8, 2022</span> -->
+          <h4><a href="">📲 Automated Attendance & Real-Time Alerts</a></h4><br>
+          <a href="#" class="read-more-btn link" data-bs-toggle="modal" data-bs-target="#exampleModal2">Never Miss a Moment</a><br><br>
+          <p class="text-muted" style="text-align: justify;">Parents receive instant notifications the moment their child boards or exits the vehicle. The automated attendance system tracks and logs every pickup and drop, eliminating manual errors and giving schools and parents complete transparency.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5th Post: Image Left, Text Right -->
+    <div class="blogpost mb-5">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img src="images/a5.jpg" class="img-fluid rounded-4" alt="Dictionary App Image" />
+        </div>
+        <div class="col-md-6 mt-3 mt-md-0">
+          <!-- <small>By Pawan Kumavat</small><span class="ms-3">Mar 8, 2022</span> -->
+          <h4><a href="">😊 Real-Time Facial Expression Recognition</a></h4><br>
+          <a href="#" class="read-more-btn link" data-bs-toggle="modal" data-bs-target="#exampleModal3">Know How Your Child Feels—In Real-Time</a><br><br>
+          <p class="text-muted" style="text-align: justify;">Our AI cameras don't just see your child—they understand them. By detecting real-time facial expressions such as happiness, sadness, fear, or stress, Oohr Vision helps parents monitor their child's emotional well-being throughout the commute. It’s not just about safety, it’s about care.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+      <!-- blog section ends here -->
+  
+      <!-- footer section starts -->
+<footer class="text-white pt-5" id="contact" style="background-color: #111;">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="heading text-center mb-4">
+      <small>Get in Touch</small>
+      <h3>Any Questions? Feel Free to Contact</h3>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section mb-5">
+      <h5 class="text-center mb-4">Frequently Asked Questions</h5>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item bg-dark text-white">
+          <h2 class="accordion-header">
+            <button class="accordion-button bg-dark text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              1. What is Oohr Vision?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Oohr Vision is a smart school transportation solution that uses AI technology to ensure your child’s safety while traveling to and from school. Parents can track the vehicle, view live video of their child, and get real-time updates.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-dark text-white">
+          <h2 class="accordion-header">
+            <button class="accordion-button bg-dark text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              2.  How does live video monitoring work?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Every vehicle equipped with Oohr Vision has smart cameras that stream live video directly to a secure app. Only authorized parents or guardians can view the feed.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-dark text-white">
+          <h2 class="accordion-header">
+            <button class="accordion-button bg-dark text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              3. Can I see my child's real-time location?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes! You’ll have access to live GPS tracking of the school vehicle through the parent app, so you always know where your child is.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-dark text-white">
+          <h2 class="accordion-header">
+            <button class="accordion-button bg-dark text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+              4. What if the driver feels sleepy or distracted?
+            </button>
+          </h2>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Our system includes Driver Drowsiness Detection using AI. If signs of fatigue are detected, an alert is sent instantly to the driver and the control center to take immediate action.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-dark text-white">
+          <h2 class="accordion-header">
+            <button class="accordion-button bg-dark text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+              5. What is AI Facial Recognition used for?
+            </button>
+          </h2>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Facial recognition helps ensure that only registered students board the vehicle. It also helps in marking attendance automatically and alerting parents when their child boards or exits.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-dark text-white">
+          <h2 class="accordion-header">
+            <button class="accordion-button bg-dark text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+              6. How does facial expression recognition help?
+            </button>
+          </h2>
+          <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Parents can see their child’s facial expressions during travel in real-time, helping them understand if their child is happy, sad, or uncomfortable, ensuring emotional as well as physical safety.
+            </div>
+          </div>
+          </div>
+          
+          <div class="accordion-item bg-dark text-white">
+            <h2 class="accordion-header">
+              <button class="accordion-button bg-dark text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                7. Do I need to buy a new school van to use this system?
+              </button>
+            </h2>
+            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Not at all! Oohr Vision can be installed in your existing school vehicle. It’s designed to be flexible and easy to integrate.
+              </div>
+            </div>
+          </div>
+
+            <div class="accordion-item bg-dark text-white">
+              <h2 class="accordion-header">
+                <button class="accordion-button bg-dark text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                  8. Is the video feed secure?
+                </button>
+              </h2>
+              <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes, all video and data are encrypted and can only be accessed by authorized parents or school officials through secure login credentials.
+                </div>
+              </div>
+            </div>
+
+              <div class="accordion-item bg-dark text-white">
+                <h2 class="accordion-header">
+                  <button class="accordion-button bg-dark text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+                    9. Can I register my interest as a parent?
+                  </button>
+                </h2>
+                <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Yes! We have a simple registration page where you can share your details. Once we receive it, our team will reach out to guide you further.
+                  </div>
+                </div>
+              </div>
+
+                <div class="accordion-item bg-dark text-white">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button bg-dark text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
+                      10. How does Oohr Vision help schools?
+                    </button>
+                  </h2>
+                  <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      It helps schools enhance their transportation safety, gain trust from parents, and manage vehicle and student travel data more efficiently through an AI dashboard.
+                    </div>
+                  </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Details & Form -->
+    <div class="row justify-content-evenly mt-4 text-start">
+      <!-- Contact Info -->
+      <div class="col-md-5 col-10 contact-details" data-aos="slide-right">
+        <div class="d-flex mb-3">
+          <i class="bi bi-geo-alt-fill me-3"></i>
+          <p>Chandigarh Citi Center Office, Office 812, 4th Floor, Block D & E, Zirakpur, Punjab 140603</p>
+        </div>
+        <div class="d-flex mb-3">
+          <i class="bi bi-telephone-fill me-3"></i>
+          <p>+91 70874 68711</p>
+        </div>
+        <div class="d-flex mb-3">
+          <i class="bi bi-send-fill me-3"></i>
+          <p>techoohrschool@gmail.com</p>
+        </div>
+        <div class="d-flex mb-3">
+          <i class="bi bi-globe-americas me-3"></i>
+          <p>www.myoohr.com</p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-md-5 col-10 mt-3 mt-md-0" data-aos="slide-left">
+        <div class="contact-form">
+          <h5 class="mb-3">Send Us A Message!</h5>
+          <form action="https://formsubmit.co/techoohrschool@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <div class="mb-3">
+              <input type="text" name="Name" class="form-control" placeholder="Name" required />
+            </div>
+            <div class="mb-3">
+              <input type="email" name="E-mail" class="form-control" placeholder="E-mail" required />
+            </div>
+            <div class="mb-3">
+              <input type="text" name="Mobile No." class="form-control" placeholder="Mobile No." required />
+            </div>
+            <div class="mb-3">
+              <textarea name="Message" class="form-control" placeholder="Message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="c-btn h-btn mt-3 py-3 px-5 rounded-pill">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="link-group mt-5 text-center" data-aos="fade-up">
+      <a href="index.html" class="text-white text-decoration-none mx-2">Home</a>
+      <span class="text-muted">|</span>
+      <a href="New.html" class="text-white text-decoration-none mx-2">See What's Inside</a>
+      <span class="text-muted">|</span>
+      <a href="contact.html" class="text-white text-decoration-none mx-2">Register</a>
+    </div>
+
+    <!-- Social Media -->
+    <div class="social-links mt-4 text-center" data-aos="fade-up">
+      <a href="https://in.linkedin.com/company/oohrinnovations" target="_blank" class="rounded-pill linkedin">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href="https://www.instagram.com/oohrinnovations/" target="_blank" class="rounded-pill instagram">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <a href="https://wa.me/917417120631" target="_blank" class="rounded-pill whatsapp">
+        <i class="bi bi-whatsapp"></i>
+      </a>
+    </div>
+
+    <hr class="text-muted my-4" />
+
+    <!-- Copyright -->
+    <p class="text-center text-muted mb-0">© 2025. ALL RIGHTS RESERVED.</p>
+  </div>
+</footer>
+<!-- footer section ends -->
+
+
+      <!-- bootstrap javascript cdn link  -->
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- AOS library javascript link  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      // initializing AOS library
+      AOS.init({
+        duration: 1000,
+        offset: 50,
+      });
+    </script>
+    <!-- custom js file linking -->
+    <script src="js/script.js"></script>
+    
+  </body>
+</html>

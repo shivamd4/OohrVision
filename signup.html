@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - OOHR VISION</title>
+  <link rel="icon" type="image/x-icon" href="images/logo.svg">
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#007bff">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+
+</head>
+<body class="login-body">
+  <div class="top-section">
+    <img src="images/logo.svg" alt="Oohr Vision Logo" class="logo" />
+    <h1 class="title">OOHR VISION</h1>
+  </div>
+
+  <div class="login-container">
+    <h2 class="login-title">SignUp</h2>
+    <form id="signup-form">
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" id="name" placeholder="Full Name" required />
+      </div>
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="email" id="email" placeholder="Email" required />
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="password" placeholder="Password" required />
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="confirm-password" placeholder="Confirm Password" required />
+      </div>
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" id="phone" placeholder="Phone Number" required />
+      </div>
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" id="city" placeholder="City" required />
+      </div>
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" id="driver-id" placeholder="Driver ID" required />
+      </div>
+
+      <p class="terms">Accept all terms and conditions</p>
+      <button type="submit" class="submit-btn">Sign Up</button>
+    </form>
+
+    <p class="footer-text">Already have an account?</p>
+    <a href="login.html" class="link-button">Sign In</a>
+
+    <a href="index.html" class="back-btn">
+      <i class="fas fa-arrow-left"></i> Back
+    </a>
+  </div>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+apiKey: "AIzaSyAkb1eoL5TW9TBjv1MTBIbhaTD-uj_sfQU",
+authDomain: "transportation-app-700e5.firebaseapp.com",
+projectId: "transportation-app-700e5",
+storageBucket: "transportation-app-700e5.firebasestorage.app",
+messagingSenderId: "932281555829",
+appId: "1:932281555829:web:da6c6b2da36d811b7e113c",
+measurementId: "G-Q36DPXZDFZ"
+};
+
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  document.getElementById("signup-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirm-password").value;
+    const phone = document.getElementById("phone").value;
+    const city = document.getElementById("city").value;
+    const driverId = document.getElementById("driver-id").value;
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    try {
+      const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+      const user = userCredential.user;
+
+      // Save extra data to Firestore
+      await db.collection("users").doc(user.uid).set({
+        name,
+        email,
+        phone,
+        city,
+        driverId, 
+        role: "user", // default role
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+
+      if (driverId.trim() === "") {
+  alert("Please enter your Driver ID");
+  return;
+}
+
+      alert("Signup successful! Please log in.");
+      window.location.href = "login.html";
+    } catch (err) {
+      alert("Signup failed: " + err.message);
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - OOHR Vision</title>
+  <link rel="icon" type="image/x-icon" href="images/logo.svg">
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#007bff">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #3f2a63;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.logo-wrapper {
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: -1.5rem; /* pull up if needed */
+}
+
+.logo-wrapper img {
+  width: 80px;
+  height: auto;
+}
+
+.logo-wrapper h1 {
+  color: white;
+  margin: 0.3rem 0 0 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.login-container {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  max-width: 350px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Rest of the styles remain unchanged: input-group, buttons, links, etc */
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      padding: 0.7rem;
+      border-radius: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .input-group i {
+      margin-right: 0.7rem;
+      color: #666;
+    }
+
+    .input-group input {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 1rem;
+    }
+
+    .terms {
+      font-size: 0.9rem;
+      margin: 1rem 0;
+    }
+
+    .submit-btn {
+      background-color: #3f2a63;
+      color: white;
+      border: none;
+      padding: 0.9rem;
+      width: 100%;
+      font-size: 1rem;
+      border-radius: 0.7rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .submit-btn:hover {
+      background-color: #2d1f4a;
+    }
+
+    .extra-links {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .extra-links a {
+      color: #7a5fc0;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .signup-section {
+      margin-top: 1.5rem;
+    }
+
+    .signup-section p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .signup-link {
+      margin-top: 0.4rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #3f2a63;
+      cursor: pointer;
+    }
+
+    .signup-link:hover {
+      text-decoration: underline;
+    }
+
+    .back-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1.1rem;
+  color: #eae4f6 ;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.back-btn:hover {
+  color: #7a5fc0;
+  background-color: #eae4f6;
+}
+
+
+.auth-input {
+  width: 100%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  background-color: #3f2a63;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.auth-btn:hover {
+  background-color: #2c1a4b;
+}
+
+.auth-btn.secondary {
+  background-color: transparent;
+  color: #3f2a63;
+  border: 2px solid #3f2a63;
+}
+
+.auth-btn.secondary:hover {
+  background-color: #3f2a63;
+  color: white;
+}
+
+  </style>
+</head>
+<body>
+  <!-- 👇 Logo and Oohr Vision title outside the box -->
+  <div class="logo-wrapper"><br>
+    <img src="images/logo.svg" alt="OOHR Vision Logo" />
+    <h1>OOHR VISION</h1>
+  </div>
+
+  <!-- 👇 Login Box -->
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="email" id="login-email" placeholder="Email or Number" required />
+      </div>
+
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="login-password" placeholder="Password" required />
+      </div>
+
+      <div class="terms">Accept all terms and conditions</div>
+
+      <button class="submit-btn" type="submit">Submit</button>
+      </form>
+
+      <div class="extra-links">
+          <a href="#" onclick="showResetForm()">Forgot Password?</a>
+          <div id="reset-form" style="display: none;">
+            <input type="email" id="reset-email" class="auth-input" placeholder="Enter your email" required />
+          
+            <button class="auth-btn" onclick="resetPassword()">Send Reset Link</button>
+          
+            <button class="auth-btn secondary" type="button" onclick="showLoginForm()">Back to Login</button>
+          </div>
+          
+      </div>
+
+      <div class="signup-section">
+        <p>Don't have an account?</p>
+        <div class="signup-link" onclick="window.location.href='signup.html'">Sign Up</div>
+      </div>
+    
+    <a href="index.html" class="back-btn">
+      <i class="fas fa-arrow-left"></i> Back
+    </a>
+  </div>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+
+<script>
+  // Firebase config
+  const firebaseConfig = {
+apiKey: "AIzaSyAkb1eoL5TW9TBjv1MTBIbhaTD-uj_sfQU",
+authDomain: "transportation-app-700e5.firebaseapp.com",
+projectId: "transportation-app-700e5",
+storageBucket: "transportation-app-700e5.firebasestorage.app",
+messagingSenderId: "932281555829",
+appId: "1:932281555829:web:da6c6b2da36d811b7e113c",
+measurementId: "G-Q36DPXZDFZ"
+};
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  
+
+  // // Handle login
+  document.getElementById("login-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // ✅ prevent refresh
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+
+  //   auth.signInWithEmailAndPassword(email, password)
+  //     .then((userCredential) => {
+  //       localStorage.setItem("loggedIn", "true"); 
+  //       alert("Login successful!");
+  //       window.location.href = "./map.html";
+  //     })
+  //     .catch((error) => {
+  //       alert("Login failed: " + error.message);
+  //     });
+  // });
+
+  auth.signInWithEmailAndPassword(email, password)
+  .then(async (userCredential) => {
+    const user = userCredential.user;
+
+    // ✅ Get role from Firestore
+    const doc = await db.collection("users").doc(user.uid).get();
+    const userData = doc.data();
+
+    localStorage.setItem("loggedIn", "true");
+    alert("Login successful!");
+
+    // ✅ Redirect based on role
+    if (userData.role === "admin") {
+      window.location.href = "admin.html";
+    } else {
+      window.location.href = "map.html";
+    }
+  })
+  .catch((error) => {
+    alert("Login failed: " + error.message);
+  });
+
+});
+
+function showResetForm() {
+  document.getElementById("login-form").style.display = "none";
+  document.getElementById("reset-form").style.display = "block";
+}
+
+function showLoginForm() {
+  document.getElementById("login-form").style.display = "block";
+  document.getElementById("reset-form").style.display = "none";
+}
+
+
+function resetPassword() {
+  const email = document.getElementById("reset-email").value;
+  if (!email) {
+    alert("Please enter your email.");
+    return;
+  }
+
+  firebase.auth().sendPasswordResetEmail(email)
+    .then(() => {
+      alert("Password reset link sent! Check your email.");
+    })
+    .catch((error) => {
+      alert("Error: " + error.message);
+    });
+}
+
+
+</script>
+</body>
+</html>
